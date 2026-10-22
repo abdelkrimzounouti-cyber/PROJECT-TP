@@ -1,0 +1,12 @@
+(*programme de test numero 2 *)
+var i:integer
+var b:true
+var n:10
+
+while i<=n do 
+    if(i / 2 == 0) then
+        write(i)
+    else 
+        print(i)
+    end while
+end 

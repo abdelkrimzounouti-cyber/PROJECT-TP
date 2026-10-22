@@ -1,0 +1,6 @@
+codeberg.org/deleuzec/stackm v0.0.0-20261004143400-4cb7e8b408cd h1:L+x+FeFuouwiAxhsQ1zUkQ3yUUf3ndVi6b4AL1iDTKw=
+codeberg.org/deleuzec/stackm v0.0.0-20261004143400-4cb7e8b408cd/go.mod h1:tem7usqof4tdF9FjnVC3sGjY5UF83hqzFpRoXc1wcdQ=
+github.com/antlr4-go/antlr/v4 v4.13.1 h1:SqQKkuVZ+zWkMMNkjy5FZe5mr5WURWnlpmOuzYWrPrQ=
+github.com/antlr4-go/antlr/v4 v4.13.1/go.mod h1:GKmUxMtwp6ZgGwZSva4eWPC5mS6vUAmOABFgjdkM7Nw=
+golang.org/x/exp v0.0.0-20240506185415-9bf2ced13842 h1:vr/HnozRka3pE4EsMEg1lgkXJkTFJCVUX+S/ZT6wYzM=
+golang.org/x/exp v0.0.0-20240506185415-9bf2ced13842/go.mod h1:XtvwrStGgqGPLc4cjQfWqZHG1YFdYs6swckp8vpsjnc=
