@@ -10,17 +10,19 @@ func _() {
 	var x [1]struct{}
 	_ = x[None-0]
 	_ = x[Integer-1]
-	_ = x[Void-2]
-	_ = x[TypeError-3]
+	_ = x[Boolean-2]
+	_ = x[Void-3]
+	_ = x[TypeError-4]
 }
 
-const _Type_name = "NoneIntegerVoidTypeError"
+const _Type_name = "NoneIntegerBooleanVoidTypeError"
 
-var _Type_index = [...]uint8{0, 4, 11, 15, 24}
+var _Type_index = [...]uint8{0, 4, 11, 18, 22, 31}
 
 func (i Type) String() string {
-	if i < 0 || i >= Type(len(_Type_index)-1) {
+	idx := int(i) - 0
+	if i < 0 || idx >= len(_Type_index)-1 {
 		return "Type(" + strconv.FormatInt(int64(i), 10) + ")"
 	}
-	return _Type_name[_Type_index[i]:_Type_index[i+1]]
+	return _Type_name[_Type_index[idx]:_Type_index[idx+1]]
 }
