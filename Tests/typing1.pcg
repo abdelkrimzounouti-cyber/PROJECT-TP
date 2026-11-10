@@ -1,0 +1,11 @@
+program typing1
+var
+    a : integer
+    b : integer
+    c : integer
+begin
+    a <- 10
+    b <- 20
+    c <- a + b * 2
+    write(c)
+end

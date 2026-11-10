@@ -1,0 +1,9 @@
+program lex1
+var
+    age : integer
+    result : boolean
+begin
+    read(age)
+    result <- true
+    write(age)
+end

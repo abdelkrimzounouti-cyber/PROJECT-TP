@@ -1,0 +1,15 @@
+program lex2
+var
+    a : integer
+    b : integer
+    c : boolean
+begin
+    a <- (10 + 5) * 2
+    b <- (a - 3) / 2
+    c <- (a >= b) and not false
+    if c then
+        writeln(a)
+    else
+        write(b)
+    end if
+end

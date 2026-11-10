@@ -1,0 +1,7 @@
+-- affectation d'un booléen à un entier.
+program typing3
+var
+    x : integer
+begin
+    x <- true
+end

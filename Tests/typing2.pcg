@@ -1,0 +1,15 @@
+program typing2
+var
+    x : integer
+    y : integer
+    condition : boolean
+begin
+    x <- 10
+    y <- 20
+    condition <- (x < y) and not false
+    if condition then
+        write(x)
+    else
+        write(y)
+    end if
+end

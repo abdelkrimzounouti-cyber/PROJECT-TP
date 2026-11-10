@@ -1,0 +1,5 @@
+-- caractère '&' non reconnu.
+program lex3
+begin
+    write(10 & 2)
+end

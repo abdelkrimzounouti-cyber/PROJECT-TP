@@ -1,0 +1,4 @@
+-- le mot-clé END final est manquant 
+program syntax3
+begin
+    write(10)

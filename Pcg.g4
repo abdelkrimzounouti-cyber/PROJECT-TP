@@ -5,17 +5,12 @@ grammar Pcg;
     // we don't actually need this
 }
 
-// Pseudo tokens
-
-
-// Lexical units (tokens)
-
-
-
 // 1. WHITESPACE & COMMENTS (Must be handled first)
 WHITESPACE     : [ \r\n\t]+ -> skip;
 BLOCK_COMMENT  : '(*' .*? '*)' -> skip;
 LINE_COMMENT   : '--' ~[\r\n]* -> skip;
+
+// Lexical units (tokens)
 
 PROGRAM : 'program';
 BEGIN : 'begin';
@@ -68,8 +63,8 @@ prog
 
 optdecls returns [*Tree val]
     : VAR d=decls
-      { $val = Node1(Dblock, $d.val, $VAR.line) }
-    | 
+      { $val = $d.val }
+    |
       { $val = nil }
     ;
 

@@ -422,12 +422,6 @@ type IOptdeclsContext interface {
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// Get_VAR returns the _VAR token.
-	Get_VAR() antlr.Token
-
-	// Set_VAR sets the _VAR token.
-	Set_VAR(antlr.Token)
-
 	// GetD returns the d rule contexts.
 	GetD() IDeclsContext
 
@@ -452,7 +446,6 @@ type OptdeclsContext struct {
 	antlr.BaseParserRuleContext
 	parser antlr.Parser
 	val    *Tree
-	_VAR   antlr.Token
 	d      IDeclsContext
 }
 
@@ -482,10 +475,6 @@ func NewOptdeclsContext(parser antlr.Parser, parent antlr.ParserRuleContext, inv
 }
 
 func (s *OptdeclsContext) GetParser() antlr.Parser { return s.parser }
-
-func (s *OptdeclsContext) Get_VAR() antlr.Token { return s._VAR }
-
-func (s *OptdeclsContext) Set_VAR(v antlr.Token) { s._VAR = v }
 
 func (s *OptdeclsContext) GetD() IDeclsContext { return s.d }
 
@@ -537,10 +526,7 @@ func (p *PcgParser) Optdecls() (localctx IOptdeclsContext) {
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(25)
-
-			var _m = p.Match(PcgParserVAR)
-
-			localctx.(*OptdeclsContext)._VAR = _m
+			p.Match(PcgParserVAR)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -553,13 +539,7 @@ func (p *PcgParser) Optdecls() (localctx IOptdeclsContext) {
 
 			localctx.(*OptdeclsContext).d = _x
 		}
-		localctx.(*OptdeclsContext).val = Node1(Dblock, localctx.(*OptdeclsContext).GetD().GetVal(), (func() int {
-			if localctx.(*OptdeclsContext).Get_VAR() == nil {
-				return 0
-			} else {
-				return localctx.(*OptdeclsContext).Get_VAR().GetLine()
-			}
-		}()))
+		localctx.(*OptdeclsContext).val = localctx.(*OptdeclsContext).GetD().GetVal()
 
 	case PcgParserBEGIN:
 		p.EnterOuterAlt(localctx, 2)

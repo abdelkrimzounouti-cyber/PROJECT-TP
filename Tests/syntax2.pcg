@@ -1,0 +1,14 @@
+program syntax2
+var
+    i : integer
+    n : integer
+begin
+    i <- 0
+    n <- 10
+    while i < n do
+        if i == 5 then
+            write(i)
+        end if
+        i <- i + 1
+    end while
+end
