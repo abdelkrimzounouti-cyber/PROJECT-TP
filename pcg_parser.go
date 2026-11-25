@@ -1172,7 +1172,7 @@ func (p *PcgParser) Insts() (localctx IInstsContext) {
 
 		localctx.(*InstsContext).l = _x
 	}
-	localctx.(*InstsContext).val = NodeN(Iblock, localctx.(*InstsContext).GetL().GetVal(), localctx.(*InstsContext).GetL().GetVal()[0].line)
+	localctx.(*InstsContext).val = NodeN(Iblock, localctx.(*InstsContext).GetL().GetVal(), firstLine(localctx.(*InstsContext).GetL().GetVal()))
 
 errorExit:
 	if p.HasError() {
