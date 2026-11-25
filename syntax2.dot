@@ -1,0 +1,64 @@
+Pgm
+:l 1
+  Dblock
+  :l 3
+    Dvar
+    :l 3
+      i
+      :l 3
+      integer
+      :l 3
+    Dvar
+    :l 4
+      n
+      :l 4
+      integer
+      :l 4
+  Iblock
+  :l 6
+    Iassign
+    :l 6
+      i
+      :l 6
+      0
+      :l 6
+    Iassign
+    :l 7
+      n
+      :l 7
+      10
+      :l 7
+    Iwhile
+    :l 8
+      Elt
+      :l 8
+        i
+        :l 8
+        n
+        :l 8
+      Iblock
+      :l 9
+        Iif
+        :l 9
+          Eeq
+          :l 9
+            i
+            :l 9
+            5
+            :l 9
+          Iblock
+          :l 10
+            Iwrite
+            :l 10
+              i
+              :l 10
+        Iassign
+        :l 12
+          i
+          :l 12
+          Eadd
+          :l 12
+            i
+            :l 12
+            1
+            :l 12

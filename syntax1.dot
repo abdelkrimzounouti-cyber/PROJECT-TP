@@ -1,0 +1,22 @@
+Pgm
+:l 1
+  Dblock
+  :l 3
+    Dvar
+    :l 3
+      x
+      :l 3
+      integer
+      :l 3
+  Iblock
+  :l 5
+    Iassign
+    :l 5
+      x
+      :l 5
+      10
+      :l 5
+    Iwrite
+    :l 6
+      x
+      :l 6

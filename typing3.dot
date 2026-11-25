@@ -1,0 +1,27 @@
+Pgm
+:l 1
+:t None
+  Dblock
+  :l 4
+  :t None
+    Dvar
+    :l 4
+    :t Integer
+      x
+      :l 4
+      :t Integer
+      integer
+      :l 4
+      :t None
+  Iblock
+  :l 6
+  :t None
+    Iassign
+    :l 6
+    :t TypeError
+      x
+      :l 6
+      :t Integer
+      true
+      :l 6
+      :t Boolean

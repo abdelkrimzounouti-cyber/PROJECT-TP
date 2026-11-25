@@ -1,0 +1,81 @@
+Pgm
+:l 1
+:t None
+  Dblock
+  :l 3
+  :t None
+    Dvar
+    :l 3
+    :t Integer
+      a
+      :l 3
+      :t Integer
+      integer
+      :l 3
+      :t None
+    Dvar
+    :l 4
+    :t Integer
+      b
+      :l 4
+      :t Integer
+      integer
+      :l 4
+      :t None
+    Dvar
+    :l 5
+    :t Integer
+      c
+      :l 5
+      :t Integer
+      integer
+      :l 5
+      :t None
+  Iblock
+  :l 7
+  :t None
+    Iassign
+    :l 7
+    :t Void
+      a
+      :l 7
+      :t Integer
+      10
+      :l 7
+      :t Integer
+    Iassign
+    :l 8
+    :t Void
+      b
+      :l 8
+      :t Integer
+      20
+      :l 8
+      :t Integer
+    Iassign
+    :l 9
+    :t Void
+      c
+      :l 9
+      :t Integer
+      Eadd
+      :l 9
+      :t Integer
+        a
+        :l 9
+        :t Integer
+        Emul
+        :l 9
+        :t Integer
+          b
+          :l 9
+          :t Integer
+          2
+          :l 9
+          :t Integer
+    Iwrite
+    :l 10
+    :t Void
+      c
+      :l 10
+      :t Integer

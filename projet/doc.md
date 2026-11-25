@@ -1,5 +1,9 @@
 # Documentation du projet PCG
 
+# Membres du groupe : 
+1- Zounouti Abdelkrim
+2- Hafsa Qadri
+
 # 1. Analyse lexicale : 
 c'est la premier partie de notre compilateur et Elle permet de lire le code source et de le découper en unités appelées tokens.
 

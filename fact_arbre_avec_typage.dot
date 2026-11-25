@@ -1,0 +1,111 @@
+Pgm
+:l 1
+:t None
+  Dblock
+  :l 4
+  :t None
+    Dvar
+    :l 4
+    :t Integer
+      i
+      :l 4
+      :t Integer
+      integer
+      :l 4
+      :t None
+    Dvar
+    :l 5
+    :t Integer
+      n
+      :l 5
+      :t Integer
+      integer
+      :l 5
+      :t None
+    Dvar
+    :l 6
+    :t Integer
+      f
+      :l 6
+      :t Integer
+      integer
+      :l 6
+      :t None
+  Iblock
+  :l 8
+  :t None
+    Iread
+    :l 8
+    :t Void
+      n
+      :l 8
+      :t Integer
+    Iassign
+    :l 9
+    :t Void
+      f
+      :l 9
+      :t Integer
+      1
+      :l 9
+      :t Integer
+    Iassign
+    :l 10
+    :t Void
+      i
+      :l 10
+      :t Integer
+      2
+      :l 10
+      :t Integer
+    Iwhile
+    :l 11
+    :t Void
+      Ele
+      :l 11
+      :t Boolean
+        i
+        :l 11
+        :t Integer
+        n
+        :l 11
+        :t Integer
+      Iblock
+      :l 12
+      :t Void
+        Iassign
+        :l 12
+        :t Void
+          f
+          :l 12
+          :t Integer
+          Emul
+          :l 12
+          :t Integer
+            f
+            :l 12
+            :t Integer
+            i
+            :l 12
+            :t Integer
+        Iassign
+        :l 13
+        :t Void
+          i
+          :l 13
+          :t Integer
+          Eadd
+          :l 13
+          :t Integer
+            i
+            :l 13
+            :t Integer
+            1
+            :l 13
+            :t Integer
+    Iwrite
+    :l 15
+    :t Void
+      f
+      :l 15
+      :t Integer
