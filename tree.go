@@ -164,3 +164,10 @@ func tree_dump(r *Tree, showt bool, filename string) {
 	tree_dump1(f, r, showt)
 	f.Close()
 }
+
+func firstLine(nodes []*Tree) int {
+    if len(nodes) == 0 {
+        return 1
+    }
+    return nodes[0].line
+}

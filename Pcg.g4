@@ -7,8 +7,16 @@ grammar Pcg;
 
 // 1. WHITESPACE & COMMENTS (Must be handled first)
 WHITESPACE     : [ \r\n\t]+ -> skip;
-BLOCK_COMMENT  : '(*' .*? '*)' -> skip;
+BLOCK_COMMENT
+    : '(*' (BLOCK_COMMENT | .)*?
+      (
+          '*)'
+        | EOF { lexical_error("Unclosed block comment") }
+      )
+      -> skip
+    ;
 LINE_COMMENT   : '--' ~[\r\n]* -> skip;
+
 
 // Lexical units (tokens)
 
@@ -48,10 +56,9 @@ LT       : '<';
 GT  : '>';
 
 fragment DIGIT : [0-9];
-NUMBER   : ('-')? DIGIT+;
+NUMBER   : DIGIT+;
 
-ID : [a-zA-Z_] [a-zA-Z_0-9]*; 
-
+ID : [a-zA-Z_] [a-zA-Z_0-9]*;
 
 
 // Grammar productions
@@ -94,7 +101,7 @@ linst returns [[]*Tree val]
 
 insts returns [*Tree val]
     : l=linst
-      { $val = NodeN(Iblock, $l.val, $l.val[0].line) }
+      { $val = NodeN(Iblock, $l.val, firstLine($l.val)) }
     ;
 
 inst returns [*Tree val]
