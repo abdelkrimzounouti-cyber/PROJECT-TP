@@ -1,0 +1,5 @@
+-- Erreur lexicale : commentaire non fermé
+program test
+begin
+    writeln(10)
+    (* commentaire non fermé

@@ -1,0 +1,5 @@
+-- Erreur lexicale : caractère ! interdit
+program test
+begin
+    writeln(10 ! 2)
+end

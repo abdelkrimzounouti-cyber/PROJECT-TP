@@ -1,0 +1,4 @@
+-- Erreur syntaxique : END manquant
+program test
+begin
+    writeln(10)

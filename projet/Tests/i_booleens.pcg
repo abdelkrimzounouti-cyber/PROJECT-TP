@@ -1,0 +1,21 @@
+-- Interprétation : opérations booléennes
+program test
+begin
+    if true and false then
+        writeln(1)
+    else
+        writeln(0)
+    end if
+
+    if true or false then
+        writeln(1)
+    else
+        writeln(0)
+    end if
+
+    if not false then
+        writeln(1)
+    else
+        writeln(0)
+    end if
+end

@@ -1,0 +1,7 @@
+-- Erreur syntaxique : THEN manquant
+program test
+begin
+    if true
+        writeln(1)
+    end if
+end

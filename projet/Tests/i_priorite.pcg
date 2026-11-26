@@ -1,0 +1,6 @@
+-- Interprétation : priorité des opérateurs
+program test
+begin
+    writeln(2 + 3 * 4)
+    writeln((2 + 3) * 4)
+end

@@ -1,0 +1,5 @@
+-- Erreur sémantique : variable non déclarée
+program test
+begin
+    writeln(x)
+end

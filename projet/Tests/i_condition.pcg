@@ -1,0 +1,7 @@
+-- Interprétation : instruction IF
+program test
+begin
+    if 10 > 5 then
+        writeln(1)
+    end if
+end

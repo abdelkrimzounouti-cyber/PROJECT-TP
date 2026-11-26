@@ -1,0 +1,16 @@
+-- Interprétation : boucles imbriquées
+program test
+var
+    i: integer
+    j: integer
+begin
+    i <- 1
+    while i <= 2 do
+        j <- 1
+        while j <= 3 do
+            writeln(i * 10 + j)
+            j <- j + 1
+        end while
+        i <- i + 1
+    end while
+end

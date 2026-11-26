@@ -1,0 +1,11 @@
+-- Interprétation : conditions imbriquées
+program test
+begin
+    if true then
+        if false then
+            writeln(1)
+        else
+            writeln(2)
+        end if
+    end if
+end

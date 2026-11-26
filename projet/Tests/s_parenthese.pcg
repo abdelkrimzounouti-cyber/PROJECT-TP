@@ -1,0 +1,5 @@
+-- Erreur syntaxique : parenthèse fermante manquante
+program test
+begin
+    writeln(10 + 5
+end

@@ -1,0 +1,5 @@
+-- Erreur sémantique : NOT appliqué à un integer
+program test
+begin
+    writeln(not 10)
+end

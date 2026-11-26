@@ -1,0 +1,39 @@
+-- Interprétation : comparaisons
+program test
+begin
+    if 5 < 10 then
+        writeln(1)
+    else
+        writeln(0)
+    end if
+
+    if 5 > 10 then
+        writeln(1)
+    else
+        writeln(0)
+    end if
+
+    if 5 <= 5 then
+        writeln(1)
+    else
+        writeln(0)
+    end if
+
+    if 5 >= 6 then
+        writeln(1)
+    else
+        writeln(0)
+    end if
+
+    if 5 = 5 then
+        writeln(1)
+    else
+        writeln(0)
+    end if
+
+    if 5 <> 4 then
+        writeln(1)
+    else
+        writeln(0)
+    end if
+end

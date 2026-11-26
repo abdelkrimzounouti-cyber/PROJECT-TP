@@ -1,0 +1,9 @@
+-- Interprétation : court-circuit AND
+program test
+begin
+    if false and (1 / 0 = 0) then
+        writeln(1)
+    else
+        writeln(0)
+    end if
+end

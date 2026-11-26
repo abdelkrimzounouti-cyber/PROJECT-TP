@@ -1,0 +1,7 @@
+-- Erreur syntaxique : DO manquant
+program test
+begin
+    while true
+        writeln(1)
+    end while
+end

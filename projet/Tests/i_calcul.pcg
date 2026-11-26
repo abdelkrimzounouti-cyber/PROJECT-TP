@@ -1,0 +1,8 @@
+-- Interprétation : opérations arithmétiques
+program test
+begin
+    writeln(10 + 5)
+    writeln(10 - 5)
+    writeln(10 * 5)
+    writeln(20 / 4)
+end

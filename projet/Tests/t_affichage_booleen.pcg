@@ -1,0 +1,5 @@
+-- Erreur sémantique : writeln accepte uniquement integer
+program test
+begin
+    writeln(true)
+end

@@ -1,0 +1,9 @@
+-- Interprétation : déclaration et affectation
+program test
+var
+    x: integer
+begin
+    x <- 10
+    x <- x + 5
+    writeln(x)
+end

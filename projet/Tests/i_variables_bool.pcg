@@ -1,0 +1,19 @@
+-- Interprétation : variables booléennes
+program test
+var
+    b: boolean
+begin
+    b <- true
+    if b then
+        writeln(1)
+    else
+        writeln(0)
+    end if
+
+    b <- not b
+    if b then
+        writeln(1)
+    else
+        writeln(0)
+    end if
+end

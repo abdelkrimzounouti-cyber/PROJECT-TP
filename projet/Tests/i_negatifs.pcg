@@ -1,0 +1,7 @@
+-- Interprétation : nombres négatifs
+program test
+begin
+    writeln(-15)
+    writeln(-20 / 3)
+    writeln(-2147483648)
+end

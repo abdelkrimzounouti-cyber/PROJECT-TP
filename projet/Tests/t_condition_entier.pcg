@@ -1,0 +1,7 @@
+-- Erreur sémantique : condition IF de type integer
+program test
+begin
+    if 10 then
+        writeln(1)
+    end if
+end

@@ -1,0 +1,5 @@
+-- Erreur lexicale : identifiant commençant par _
+program test
+begin
+    writeln(_variable)
+end

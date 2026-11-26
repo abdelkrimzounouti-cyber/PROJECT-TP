@@ -1,0 +1,5 @@
+-- Erreur d'exécution : division par zéro
+program test
+begin
+    writeln(10 / 0)
+end

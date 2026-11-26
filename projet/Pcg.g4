@@ -42,7 +42,7 @@ OR      : 'or';
 ASSIGN   : '<-';
 LE    : '<=';
 GE   : '>=';
-EQ  : '==';
+EQ  : '=';
 NE : '<>';
 
 ADD : '+';
@@ -58,14 +58,13 @@ GT  : '>';
 fragment DIGIT : [0-9];
 NUMBER   : DIGIT+;
 
-ID : [a-zA-Z_] [a-zA-Z_0-9]*;
-
+ID : [a-zA-Z] [a-zA-Z_0-9]*;
 
 // Grammar productions
 
 prog
-    : PROGRAM ID d=optdecls BEGIN i=insts END EOF
-      { root = Node2(Pgm, $d.val, $i.val, 1) }
+    : p=PROGRAM ID d=optdecls BEGIN i=insts END EOF
+      { root = Node2(Pgm, $d.val, $i.val, $p.GetLine()) }
     ;
 
 optdecls returns [*Tree val]

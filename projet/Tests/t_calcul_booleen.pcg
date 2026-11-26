@@ -1,0 +1,5 @@
+-- Erreur sémantique : addition entre integer et boolean
+program test
+begin
+    writeln(10 + true)
+end

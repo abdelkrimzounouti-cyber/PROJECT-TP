@@ -37,7 +37,7 @@ func pcgParserInit() {
 		"", "", "", "", "'program'", "'begin'", "'end'", "'write'", "'read'",
 		"'else'", "'if'", "'var'", "'while'", "'then'", "'do'", "'writeln'",
 		"'true'", "'false'", "'not'", "'and'", "'or'", "'<-'", "'<='", "'>='",
-		"'=='", "'<>'", "'+'", "'-'", "'*'", "'/'", "'('", "')'", "':'", "'<'",
+		"'='", "'<>'", "'+'", "'-'", "'*'", "'/'", "'('", "')'", "':'", "'<'",
 		"'>'",
 	}
 	staticData.SymbolicNames = []string{
@@ -215,6 +215,12 @@ type IProgContext interface {
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
+	// GetP returns the p token.
+	GetP() antlr.Token
+
+	// SetP sets the p token.
+	SetP(antlr.Token)
+
 	// GetD returns the d rule contexts.
 	GetD() IOptdeclsContext
 
@@ -228,11 +234,11 @@ type IProgContext interface {
 	SetI(IInstsContext)
 
 	// Getter signatures
-	PROGRAM() antlr.TerminalNode
 	ID() antlr.TerminalNode
 	BEGIN() antlr.TerminalNode
 	END() antlr.TerminalNode
 	EOF() antlr.TerminalNode
+	PROGRAM() antlr.TerminalNode
 	Optdecls() IOptdeclsContext
 	Insts() IInstsContext
 
@@ -243,6 +249,7 @@ type IProgContext interface {
 type ProgContext struct {
 	antlr.BaseParserRuleContext
 	parser antlr.Parser
+	p      antlr.Token
 	d      IOptdeclsContext
 	i      IInstsContext
 }
@@ -274,6 +281,10 @@ func NewProgContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokin
 
 func (s *ProgContext) GetParser() antlr.Parser { return s.parser }
 
+func (s *ProgContext) GetP() antlr.Token { return s.p }
+
+func (s *ProgContext) SetP(v antlr.Token) { s.p = v }
+
 func (s *ProgContext) GetD() IOptdeclsContext { return s.d }
 
 func (s *ProgContext) GetI() IInstsContext { return s.i }
@@ -281,10 +292,6 @@ func (s *ProgContext) GetI() IInstsContext { return s.i }
 func (s *ProgContext) SetD(v IOptdeclsContext) { s.d = v }
 
 func (s *ProgContext) SetI(v IInstsContext) { s.i = v }
-
-func (s *ProgContext) PROGRAM() antlr.TerminalNode {
-	return s.GetToken(PcgParserPROGRAM, 0)
-}
 
 func (s *ProgContext) ID() antlr.TerminalNode {
 	return s.GetToken(PcgParserID, 0)
@@ -300,6 +307,10 @@ func (s *ProgContext) END() antlr.TerminalNode {
 
 func (s *ProgContext) EOF() antlr.TerminalNode {
 	return s.GetToken(PcgParserEOF, 0)
+}
+
+func (s *ProgContext) PROGRAM() antlr.TerminalNode {
+	return s.GetToken(PcgParserPROGRAM, 0)
 }
 
 func (s *ProgContext) Optdecls() IOptdeclsContext {
@@ -348,7 +359,10 @@ func (p *PcgParser) Prog() (localctx IProgContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(16)
-		p.Match(PcgParserPROGRAM)
+
+		var _m = p.Match(PcgParserPROGRAM)
+
+		localctx.(*ProgContext).p = _m
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
@@ -400,7 +414,7 @@ func (p *PcgParser) Prog() (localctx IProgContext) {
 			goto errorExit
 		}
 	}
-	root = Node2(Pgm, localctx.(*ProgContext).GetD().GetVal(), localctx.(*ProgContext).GetI().GetVal(), 1)
+	root = Node2(Pgm, localctx.(*ProgContext).GetD().GetVal(), localctx.(*ProgContext).GetI().GetVal(), localctx.(*ProgContext).GetP().GetLine())
 
 errorExit:
 	if p.HasError() {
